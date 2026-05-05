@@ -6,7 +6,6 @@
   <meta name="description" content="Portfolio de Youssef El Farissi — Étudiant en BTS SIO SLAM à Quimper. Développeur web, scripts, sécurité informatique.">
   <meta name="author" content="Youssef El Farissi">
   <meta name="theme-color" content="#000000">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23000'/><text x='50' y='68' font-family='Inter,sans-serif' font-size='48' font-weight='800' fill='white' text-anchor='middle'>YF</text></svg>">
   <title>Youssef El Farissi — Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +13,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Force scroll to top on every page load — prevents browser restoring scroll position
+    if (history.scrollRestoration) history.scrollRestoration = 'manual';
+    window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+  </script>
 </head>
 <body>
 
@@ -164,7 +168,7 @@
             J'aime relever des défis techniques — qu'il s'agisse de scripter
             le déploiement d'un parc de mille postes, de coder un site vitrine
             de zéro ou de durcir la sécurité d'un parc informatique. En dehors
-            du code, je pratique le MMA, le Jiu-Jitsu Brésilien et la musculation.
+            du code, je pratique le MMA, le Jiu-Jitsu brésilien et la musculation.
           </p>
 
           <div class="about-stats">
@@ -483,7 +487,7 @@
             <span class="tl-date">2024 — 2026</span>
             <span class="tl-type type-edu">Formation</span>
           </div>
-          <h3 class="tl-title">BTS SIO · Option SLAM</h3>
+          <h3 class="tl-title">BTS SIO · option SLAM</h3>
           <p class="tl-role">Lycée Chaptal — Quimper</p>
           <p class="tl-text">Solutions Logicielles et Applications Métiers. Développement, bases de données, cybersécurité, mode projet.</p>
         </div>
@@ -502,7 +506,7 @@
         <div class="tl-item reveal">
           <div class="tl-mark"></div>
           <div class="tl-meta">
-            <span class="tl-date">2018 - 2021</span>
+            <span class="tl-date">2021</span>
             <span class="tl-type type-edu">Formation</span>
           </div>
           <h3 class="tl-title">Diplôme National du Brevet · Mention Bien</h3>
@@ -521,7 +525,7 @@
       </div>
 
       <h2 class="section-title reveal">
-        Veille <span class="grad-text">Technologique</span>
+        Veille <span class="grad-text">technologique</span>
       </h2>
       <p class="reveal" style="color:var(--text-muted);max-width:60ch;margin-bottom:2.5rem;">
         Une veille active alimentée bimestriellement sur la sécurité des applications mobiles —

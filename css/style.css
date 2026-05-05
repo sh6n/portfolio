@@ -50,9 +50,12 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+section[id] { scroll-margin-top: 80px; }
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 80px;
 }
 
 body {

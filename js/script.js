@@ -352,7 +352,7 @@
     vtNext.disabled = idx === veilleData.length - 1;
 
     const activeBtn = vtTrack.children[idx];
-    if (activeBtn) activeBtn.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' });
+    if (activeBtn && currentPeriod !== 0) activeBtn.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' });
   }
 
   vtPeriods.forEach((btn, i) => btn.addEventListener('click', () => renderPeriod(i)));
