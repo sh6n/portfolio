@@ -580,9 +580,9 @@
             <span>Veille informationnelle</span>
             <span>Apprentissage personnel</span>
           </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=VvDbPu5OzCxg" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
+          <a href="#veille" class="project-card-link project-card-link-internal">
+            <span>Voir la veille</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </article>
 
@@ -845,100 +845,117 @@
         <span class="section-tag">06 — Veille</span>
         <h2 class="section-title">Veille <span class="accent-italic">technologique</span></h2>
         <p class="section-lead">
-          Une veille active et alimentée régulièrement pour anticiper les évolutions du domaine
-          et nourrir mon développement professionnel.
+          Une veille active alimentée bimestriellement sur la sécurité des applications mobiles —
+          un enjeu majeur en BTS SIO SLAM, où je serai amené à concevoir des applis robustes face aux cybermenaces.
         </p>
       </div>
 
       <div class="veille-hero">
         <div class="veille-hero-meta">
-          <span class="veille-tag">Sujet</span>
+          <span class="veille-tag">Sujet de veille</span>
         </div>
         <h3 class="veille-hero-title">Sécurité des Applications <span class="accent-italic">Mobiles</span></h3>
         <p class="veille-hero-desc">
           Les applications mobiles sont devenues indispensables (banque, messagerie, santé, travail…)
-          et attirent autant de cybermenaces. Cette veille explore les actualités 2025–2026 :
-          mises à jour critiques, recommandations CNIL, nouveaux malwares et bonnes pratiques.
+          et attirent autant de cybermenaces. Suivi régulier sur 2 ans des vulnérabilités, recommandations CNIL,
+          malwares émergents, frameworks de sécurité et bonnes pratiques de développement.
         </p>
-        <a href="assets/docs/Veille_Technologique.pdf" target="_blank" class="btn btn-primary btn-veille">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6M9 9h1"/></svg>
-          Consulter la veille complète
-        </a>
+        <div class="veille-hero-stats">
+          <div class="vh-stat">
+            <span class="vh-stat-value">10</span>
+            <span class="vh-stat-label">Périodes suivies</span>
+          </div>
+          <div class="vh-stat-divider"></div>
+          <div class="vh-stat">
+            <span class="vh-stat-value">20+</span>
+            <span class="vh-stat-label">Articles analysés</span>
+          </div>
+          <div class="vh-stat-divider"></div>
+          <div class="vh-stat">
+            <span class="vh-stat-value">2 ans</span>
+            <span class="vh-stat-label">Sept 2024 → Mai 2026</span>
+          </div>
+        </div>
       </div>
 
-      <div class="veille-grid">
-        <article class="veille-card">
-          <div class="veille-card-num">01</div>
-          <h4>Bulletin de sécurité Android</h4>
-          <p class="veille-card-date">Février 2025</p>
-          <p>
-            Google publie un bulletin corrigeant des failles critiques, dont une élévation de
-            privilèges via le Framework Android. Renforcement de Google Play Protect.
-          </p>
-        </article>
+      <!-- TIMELINE NAV -->
+      <div class="veille-timeline" id="veilleTimeline" role="tablist" aria-label="Timeline de la veille">
+        <button class="vt-arrow vt-arrow-prev" id="vtPrev" aria-label="Période précédente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="vt-track" id="vtTrack">
+          <button class="vt-period" data-period="0" role="tab"><span class="vt-period-num">1</span><span class="vt-period-label">Sept – Oct 2024</span></button>
+          <button class="vt-period" data-period="1" role="tab"><span class="vt-period-num">2</span><span class="vt-period-label">Nov – Déc 2024</span></button>
+          <button class="vt-period" data-period="2" role="tab"><span class="vt-period-num">3</span><span class="vt-period-label">Jan – Fév 2025</span></button>
+          <button class="vt-period" data-period="3" role="tab"><span class="vt-period-num">4</span><span class="vt-period-label">Mars – Avr 2025</span></button>
+          <button class="vt-period" data-period="4" role="tab"><span class="vt-period-num">5</span><span class="vt-period-label">Mai – Juin 2025</span></button>
+          <button class="vt-period" data-period="5" role="tab"><span class="vt-period-num">6</span><span class="vt-period-label">Juil – Août 2025</span></button>
+          <button class="vt-period" data-period="6" role="tab"><span class="vt-period-num">7</span><span class="vt-period-label">Sept – Oct 2025</span></button>
+          <button class="vt-period" data-period="7" role="tab"><span class="vt-period-num">8</span><span class="vt-period-label">Nov – Déc 2025</span></button>
+          <button class="vt-period" data-period="8" role="tab"><span class="vt-period-num">9</span><span class="vt-period-label">Jan – Fév 2026</span></button>
+          <button class="vt-period" data-period="9" role="tab"><span class="vt-period-num">10</span><span class="vt-period-label">Mars – Mai 2026</span></button>
+        </div>
+        <button class="vt-arrow vt-arrow-next" id="vtNext" aria-label="Période suivante">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
 
-        <article class="veille-card">
-          <div class="veille-card-num">02</div>
-          <h4>Recommandations CNIL</h4>
-          <p class="veille-card-date">Avril 2025</p>
-          <p>
-            Chiffrement TLS obligatoire, Hardware Keystore / Secure Enclave, interdiction
-            des sauvegardes non sécurisées, conformité OWASP MASVS au niveau L1 minimum.
-          </p>
-        </article>
+      <!-- TIMELINE CONTENT -->
+      <div class="veille-content">
+        <div class="vc-header">
+          <span class="vc-period-tag" id="vcPeriodTag">Période 1</span>
+          <h3 class="vc-period-title" id="vcPeriodTitle">Septembre – Octobre 2024</h3>
+          <p class="vc-period-summary" id="vcPeriodSummary"></p>
+        </div>
 
-        <article class="veille-card">
-          <div class="veille-card-num">03</div>
-          <h4>Contrôles CNIL ciblés</h4>
-          <p class="veille-card-date">Mars 2025</p>
-          <p>
-            25% des contrôles 2025 visent les apps mobiles, en particulier celles utilisant
-            des SDK tiers et ne respectant pas le consentement utilisateur.
-          </p>
-        </article>
+        <div class="vc-articles" id="vcArticles">
+          <!-- Les articles sont injectés via JS -->
+        </div>
+      </div>
 
-        <article class="veille-card">
-          <div class="veille-card-num">04</div>
-          <h4>Tendances Zimperium 2025</h4>
-          <p class="veille-card-date">Fin 2024</p>
-          <p>
-            Hausse des ransomwares mobiles, phishing dopé à l'IA. <strong>68%</strong> des menaces
-            mobiles passent par du sideloading, surtout dans la fintech.
-          </p>
-        </article>
-
-        <article class="veille-card">
-          <div class="veille-card-num">05</div>
-          <h4>Malware SparkCat</h4>
-          <p class="veille-card-date">Février 2025</p>
-          <p>
-            Kaspersky découvre un malware iOS qui utilise l'OCR pour voler des phrases de
-            récupération crypto. Apple et Google retirent ~20 apps infectées.
-          </p>
-        </article>
-
-        <article class="veille-card">
-          <div class="veille-card-num">06</div>
-          <h4>Checklist sécurité dev</h4>
-          <p class="veille-card-date">Avril 2025</p>
-          <p>
-            Analyse statique &amp; dynamique du code, tests anti-malware, pentesting,
-            chiffrement des données sensibles et des sessions : la base.
-          </p>
-        </article>
+      <!-- CONCLUSION -->
+      <div class="veille-conclusion">
+        <div class="vconc-head">
+          <span class="vconc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </span>
+          <h3>Conclusion de la veille (2024 – 2026)</h3>
+        </div>
+        <p>
+          En 2 ans, la sécurité des applications mobiles est passée d'un sujet
+          principalement réglementaire (RGPD, CNIL) à un véritable champ de bataille :
+          montée en puissance des <strong>malwares iOS/Android</strong>, généralisation du
+          <strong>phishing dopé à l'IA</strong>, et durcissement progressif des stores
+          officiels (App Store / Play Store).
+        </p>
+        <p>
+          En tant que futur développeur SLAM, je retiens que la sécurité ne peut plus être
+          un ajout post-développement : elle doit être <strong>intégrée dès la conception</strong>
+          via les normes <strong>OWASP MASVS</strong>, le chiffrement systématique, l'utilisation
+          des modules sécurisés natifs (Keystore, Secure Enclave) et une <strong>réduction
+          stricte des permissions</strong> demandées.
+        </p>
       </div>
 
       <div class="veille-sources">
-        <span class="veille-sources-label">Mes sources principales :</span>
-        <a href="https://www.cnil.fr/" target="_blank">CNIL</a>
+        <span class="veille-sources-label">Sources suivies :</span>
+        <a href="https://www.cnil.fr/" target="_blank" rel="noopener">CNIL</a>
         <span class="dot">·</span>
-        <a href="https://source.android.com/" target="_blank">Android Security Bulletin</a>
+        <a href="https://source.android.com/docs/security/bulletin" target="_blank" rel="noopener">Android Security Bulletin</a>
         <span class="dot">·</span>
-        <a href="https://www.ecranmobile.fr/" target="_blank">Écran Mobile</a>
+        <a href="https://support.apple.com/fr-fr/100100" target="_blank" rel="noopener">Apple Security</a>
         <span class="dot">·</span>
-        <a href="https://www.kaspersky.fr/" target="_blank">Kaspersky</a>
+        <a href="https://www.ecranmobile.fr/" target="_blank" rel="noopener">Écran Mobile</a>
         <span class="dot">·</span>
-        <a href="https://owasp.org/" target="_blank">OWASP</a>
+        <a href="https://www.kaspersky.fr/" target="_blank" rel="noopener">Kaspersky</a>
+        <span class="dot">·</span>
+        <a href="https://owasp.org/www-project-mobile-app-security/" target="_blank" rel="noopener">OWASP MASVS</a>
+        <span class="dot">·</span>
+        <a href="https://www.zimperium.com/" target="_blank" rel="noopener">Zimperium</a>
+        <span class="dot">·</span>
+        <a href="https://www.lemondeinformatique.fr/" target="_blank" rel="noopener">Le Monde Informatique</a>
       </div>
     </div>
   </section>
