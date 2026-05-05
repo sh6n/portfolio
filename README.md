@@ -38,7 +38,3 @@ portfolio/
 - **Email** : yyouss.elff@gmail.com
 - **LinkedIn** : [in/youssef-el-farissi](https://www.linkedin.com/in/youssef-el-farissi-245a30369/)
 - **GitHub** : [@sh6n](https://github.com/sh6n)
-
----
-
-*Bonne chance pour ton oral E6 ! 🚀*
