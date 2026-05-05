@@ -3,338 +3,417 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Youssef EL FARISSI — Étudiant en BTS SIO option SLAM au Lycée Chaptal de Quimper. Développeur, scripts, sécurité informatique.">
-  <meta name="author" content="Youssef EL FARISSI">
-  <title>Youssef EL FARISSI — Portfolio BTS SIO SLAM</title>
+  <meta name="description" content="Portfolio de Youssef El Farissi — Étudiant en BTS SIO SLAM à Quimper. Développeur web, scripts, sécurité informatique.">
+  <meta name="author" content="Youssef El Farissi">
+  <meta name="theme-color" content="#000000">
+  <title>Youssef El Farissi — Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Atmospheric background -->
-  <div class="bg-layer">
+  <!-- Background ambience -->
+  <div class="bg">
     <div class="bg-grid"></div>
-    <div class="bg-orb bg-orb-1"></div>
-    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
     <div class="bg-noise"></div>
   </div>
 
-  <!-- ============= NAVIGATION ============= -->
-  <nav class="nav">
-    <a href="#home" class="nav-logo" aria-label="Accueil Youssef EL FARISSI">
-      <span class="nav-logo-mark">
-        <span class="nav-logo-letters">YF</span>
-        <span class="nav-logo-ring"></span>
+  <!-- ============= NAV ============= -->
+  <header class="nav">
+    <a href="#top" class="nav-logo" aria-label="Accueil">
+      <span class="logo-mark">
+        <span class="logo-mark-inner"></span>
       </span>
+      <span class="logo-text">Youssef</span>
     </a>
-    <div class="nav-links" id="navLinks">
+
+    <nav class="nav-links" id="navLinks">
       <a href="#about">À propos</a>
+      <a href="#work">Projets</a>
       <a href="#skills">Compétences</a>
-      <a href="#education">Parcours</a>
-      <a href="#internships">Stages</a>
-      <a href="#projects">Réalisations</a>
+      <a href="#experience">Parcours</a>
       <a href="#veille">Veille</a>
+      <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
-    </div>
+    </nav>
+
+    <a href="#contact" class="nav-cta">
+      Me contacter
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
+      <span></span><span></span>
     </button>
-  </nav>
+  </header>
 
-  <!-- ============= HERO ============= -->
-  <section id="home" class="hero">
-    <div class="hero-inner">
-      <div class="hero-meta">
-        <span class="status-dot"></span>
-        BTS SIO SLAM · Promotion 2024–2026
+  <main id="top">
+
+    <!-- ============= HERO ============= -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Disponible pour stage · Quimper
+        </div>
+
+        <h1 class="hero-title">
+          <span class="reveal" data-d="0">Bienvenue sur</span>
+          <span class="reveal hero-title-grad" data-d="80">mon Portfolio.</span>
+        </h1>
+
+        <p class="hero-sub reveal" data-d="200">
+          Je suis <strong>Youssef El Farissi</strong>, étudiant en BTS SIO SLAM
+          à Quimper. Je conçois des solutions web, je script, je sécurise.
+          Du déploiement à grande échelle au site vitrine — je transforme les
+          besoins concrets en code propre.
+        </p>
+
+        <div class="hero-cta reveal" data-d="320">
+          <a href="#work" class="btn btn-primary">
+            Voir mes projets
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="assets/docs/CV_Youssef_EL_FARISSI.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Télécharger le CV
+          </a>
+        </div>
+
+        <div class="hero-meta reveal" data-d="440">
+          <div>
+            <span class="meta-k">Basé à</span>
+            <span class="meta-v">Quimper, FR</span>
+          </div>
+          <div>
+            <span class="meta-k">Formation</span>
+            <span class="meta-v">BTS SIO · SLAM</span>
+          </div>
+          <div>
+            <span class="meta-k">Année</span>
+            <span class="meta-v">2024 — 2026</span>
+          </div>
+        </div>
       </div>
 
-      <h1 class="hero-title">
-        <span class="hero-line reveal" data-delay="0">Youssef</span>
-        <span class="hero-line reveal" data-delay="80">
-          EL <span class="accent-italic">FARISSI</span>
-        </span>
-      </h1>
-
-      <p class="hero-subtitle reveal" data-delay="240">
-        Étudiant en deuxième année de <em>BTS Services Informatiques aux Organisations</em>,
-        spécialité <em>Solutions Logicielles et Applications Métiers</em>, au Lycée Chaptal de Quimper.
-      </p>
-
-      <p class="hero-description reveal" data-delay="320">
-        Développeur en formation, j'aime créer, scripter et résoudre.<br>
-        Du déploiement à grande échelle au site vitrine, je construis des solutions concrètes.
-      </p>
-
-      <div class="hero-cta reveal" data-delay="400">
-        <a href="#projects" class="btn btn-primary">
-          <span>Voir mes réalisations</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="assets/docs/CV_Youssef_EL_FARISSI.pdf" target="_blank" class="btn btn-ghost">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          <span>Télécharger mon CV</span>
-        </a>
+      <!-- Holographic 3D object -->
+      <div class="hero-visual reveal" data-d="160">
+        <div class="cube">
+          <div class="cube-face cube-front"></div>
+          <div class="cube-face cube-back"></div>
+          <div class="cube-face cube-right"></div>
+          <div class="cube-face cube-left"></div>
+          <div class="cube-face cube-top"></div>
+          <div class="cube-face cube-bottom"></div>
+          <div class="cube-mark">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M8 6l8 12 8-12M8 26h16" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="cube-shadow"></div>
       </div>
+    </section>
 
-      <div class="hero-stats reveal" data-delay="480">
-        <div class="stat">
-          <div class="stat-value">2</div>
-          <div class="stat-label">Stages effectués</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <div class="stat-value">14</div>
-          <div class="stat-label">Réalisations professionnelles</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <div class="stat-value">7+</div>
-          <div class="stat-label">Langages maîtrisés</div>
-        </div>
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>HTML</span><span>·</span><span>CSS</span><span>·</span>
+        <span>JavaScript</span><span>·</span><span>PHP</span><span>·</span>
+        <span>Python</span><span>·</span><span>Java</span><span>·</span>
+        <span>C#</span><span>·</span><span>PowerShell</span><span>·</span>
+        <span>MySQL</span><span>·</span><span>Git</span><span>·</span>
+        <span>Figma</span><span>·</span><span>NinjaOne</span><span>·</span>
+        <span>HTML</span><span>·</span><span>CSS</span><span>·</span>
+        <span>JavaScript</span><span>·</span><span>PHP</span><span>·</span>
+        <span>Python</span><span>·</span><span>Java</span><span>·</span>
+        <span>C#</span><span>·</span><span>PowerShell</span><span>·</span>
+        <span>MySQL</span><span>·</span><span>Git</span><span>·</span>
+        <span>Figma</span><span>·</span><span>NinjaOne</span><span>·</span>
       </div>
     </div>
 
-  </section>
-
-  <!-- ============= ABOUT ============= -->
-  <section id="about" class="section">
-    <div class="container">
+    <!-- ============= ABOUT ============= -->
+    <section id="about" class="section">
       <div class="section-head">
-        <span class="section-tag">01 — À propos</span>
-        <h2 class="section-title">Qui suis-<span class="accent-italic">je</span> ?</h2>
+        <span class="section-num">01</span>
+        <span class="section-tag">À propos</span>
       </div>
 
       <div class="about-grid">
-        <div class="about-text">
-          <p class="lead">
-            Bonjour, je m'appelle <strong>Youssef EL FARISSI</strong>, j'ai 19 ans
-            et je vis à Quimper, dans le Finistère.
+        <h2 class="about-title reveal">
+          Étudiant développeur, <span class="grad-text">curieux et rigoureux</span>,
+          basé en Bretagne.
+        </h2>
+
+        <div class="about-body reveal">
+          <p>
+            J'ai 19 ans, je vis à Quimper. Après un Bac Général spécialités
+            Maths et NSI au Lycée Auguste Brizeux, j'ai choisi le BTS SIO SLAM
+            au Lycée Chaptal pour me former au développement, aux bases de
+            données et à la sécurité des SI.
           </p>
           <p>
-            Après un Baccalauréat Général avec spécialités <em>Maths</em> et <em>NSI</em>
-            obtenu au Lycée Auguste Brizeux, je me suis orienté vers le
-            <strong>BTS Services Informatiques aux Organisations option SLAM</strong>
-            au Lycée Chaptal pour me former au développement, aux bases de données
-            et à la sécurité des systèmes d'information.
-          </p>
-          <p>
-            Motivé, rigoureux et autonome, j'aime relever des défis techniques —
-            qu'il s'agisse de scripter un déploiement sur un millier de postes,
-            de créer un site vitrine de A à Z ou de durcir la sécurité d'un parc
-            informatique. En dehors du code, je pratique le <em>MMA</em>,
-            le <em>Jiu-Jitsu Brésilien</em> et la musculation.
+            J'aime relever des défis techniques — qu'il s'agisse de scripter
+            le déploiement d'un parc de mille postes, de coder un site vitrine
+            de zéro ou de durcir la sécurité d'un parc informatique. En dehors
+            du code, je pratique le MMA, le Jiu-Jitsu Brésilien et la musculation.
           </p>
 
-          <div class="about-info-grid">
-            <div class="about-info">
-              <span class="about-info-label">Localisation</span>
-              <span class="about-info-value">Quimper, Finistère</span>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-num">2</div>
+              <div class="stat-lab">Stages</div>
             </div>
-            <div class="about-info">
-              <span class="about-info-label">Formation</span>
-              <span class="about-info-value">BTS SIO SLAM · 2ème année</span>
+            <div class="stat">
+              <div class="stat-num">14</div>
+              <div class="stat-lab">Réalisations</div>
             </div>
-            <div class="about-info">
-              <span class="about-info-label">Établissement</span>
-              <span class="about-info-value">Lycée Chaptal · Quimper</span>
+            <div class="stat">
+              <div class="stat-num">7+</div>
+              <div class="stat-lab">Langages</div>
             </div>
-            <div class="about-info">
-              <span class="about-info-label">Langues</span>
-              <span class="about-info-value">FR · EN (C1) · ES (B2)</span>
+            <div class="stat">
+              <div class="stat-num">3</div>
+              <div class="stat-lab">Langues parlées</div>
             </div>
           </div>
         </div>
-
-        <aside class="bts-explainer">
-          <div class="bts-card">
-            <div class="bts-card-head">
-              <span class="bts-card-badge">Mon option</span>
-              <h3>SLAM</h3>
-            </div>
-            <p class="bts-card-sub">Solutions Logicielles et Applications Métiers</p>
-            <p class="bts-card-text">
-              Cursus axé sur le <strong>développement</strong> et la
-              <strong>gestion de solutions logicielles</strong>. On apprend à concevoir,
-              maintenir et faire évoluer des applications métiers et des bases de données
-              pour répondre aux besoins concrets des entreprises.
-            </p>
-            <ul class="bts-card-list">
-              <li>Développement Web &amp; Application</li>
-              <li>Bases de données relationnelles</li>
-              <li>Sécurité applicative</li>
-              <li>Gestion de projet</li>
-            </ul>
-          </div>
-
-          <div class="bts-card bts-card-secondary">
-            <div class="bts-card-head">
-              <span class="bts-card-badge">Autre option</span>
-              <h3>SISR</h3>
-            </div>
-            <p class="bts-card-sub">Solutions d'Infrastructure, Systèmes et Réseaux</p>
-            <p class="bts-card-text">
-              Forme aux métiers de l'administration des systèmes et des réseaux,
-              avec un focus sur la sécurité et la fiabilité des infrastructures.
-            </p>
-          </div>
-        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============= SKILLS ============= -->
-  <section id="skills" class="section">
-    <div class="container">
+    <!-- ============= WORK / PROJECTS ============= -->
+    <section id="work" class="section">
       <div class="section-head">
-        <span class="section-tag">02 — Stack</span>
-        <h2 class="section-title">Mes <span class="accent-italic">compétences</span></h2>
-        <p class="section-lead">
-          Une boîte à outils acquise au fil de ma formation, de mes projets personnels et de mes deux stages en entreprise.
-        </p>
+        <span class="section-num">02</span>
+        <span class="section-tag">Projets</span>
       </div>
 
-      <div class="skills-grid">
-        <div class="skill-block">
-          <div class="skill-block-head">
-            <span class="skill-block-num">01</span>
-            <h3>Langages</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="pill">HTML</span>
-            <span class="pill">CSS</span>
-            <span class="pill">JavaScript</span>
-            <span class="pill">PHP</span>
-            <span class="pill">Python</span>
-            <span class="pill">Java</span>
-            <span class="pill">C#</span>
-            <span class="pill pill-mono">PowerShell</span>
-          </div>
-        </div>
+      <h2 class="section-title reveal">
+        Une sélection de <span class="grad-text">réalisations</span>
+        — formation, stages et projets perso.
+      </h2>
 
-        <div class="skill-block">
-          <div class="skill-block-head">
-            <span class="skill-block-num">02</span>
-            <h3>Bases de données</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="pill">MySQL</span>
-            <span class="pill">PostgreSQL</span>
-            <span class="pill pill-mono">SQL</span>
-          </div>
-        </div>
-
-        <div class="skill-block">
-          <div class="skill-block-head">
-            <span class="skill-block-num">03</span>
-            <h3>Outils &amp; Workflow</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="pill">Git</span>
-            <span class="pill">VS Code</span>
-            <span class="pill">Figma</span>
-            <span class="pill">GitHub</span>
-            <span class="pill">Replit</span>
-            <span class="pill">GLPI</span>
-          </div>
-        </div>
-
-        <div class="skill-block">
-          <div class="skill-block-head">
-            <span class="skill-block-num">04</span>
-            <h3>Réseaux &amp; Virtualisation</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="pill">Cisco Packet Tracer</span>
-            <span class="pill">VMware</span>
-            <span class="pill">VirtualBox</span>
-            <span class="pill">NinjaOne RMM</span>
-            <span class="pill">Office 365</span>
-          </div>
-        </div>
+      <div class="filters reveal" id="filters">
+        <button class="filter active" data-f="all">Tout</button>
+        <button class="filter" data-f="formation">Formation</button>
+        <button class="filter" data-f="bunzl">BUNZL</button>
+        <button class="filter" data-f="deco">Déco-Plâtre</button>
       </div>
-    </div>
-  </section>
 
-  <!-- ============= EDUCATION ============= -->
-  <section id="education" class="section">
-    <div class="container">
+      <div class="projects" id="projects">
+
+        <a class="project" data-cat="formation" href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=qEwWqi1NwHQ4" target="_blank" rel="noopener">
+          <div class="project-num">01</div>
+          <div class="project-tag">Formation</div>
+          <h3 class="project-title">Création d'un site web</h3>
+          <p class="project-period">Mai — Juin 2025</p>
+          <p class="project-desc">Conception de Kafkerin : valorisation d'image, mise à disposition d'un service et travail en mode projet.</p>
+          <div class="project-skills"><span>Mode projet</span><span>Service IT</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="formation" href="#top">
+          <div class="project-num">02</div>
+          <div class="project-tag">Formation</div>
+          <h3 class="project-title">Création de ce portfolio</h3>
+          <p class="project-period">Janvier 2025 — En cours</p>
+          <p class="project-desc">Développement et maintien d'un portfolio personnel — vitrine de mon parcours, mes compétences et mes projets.</p>
+          <div class="project-skills"><span>Identité numérique</span><span>Web</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="formation" href="#veille">
+          <div class="project-num">03</div>
+          <div class="project-tag">Formation</div>
+          <h3 class="project-title">Veille informatique</h3>
+          <p class="project-period">Janvier 2025 — En cours</p>
+          <p class="project-desc">Veille technologique régulière sur la sécurité des applications mobiles, alimentée par CNIL, Zimperium, Kaspersky…</p>
+          <div class="project-skills"><span>Veille</span><span>Apprentissage</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="formation" href="https://www.linkedin.com/in/youssef-el-farissi-245a30369/" target="_blank" rel="noopener">
+          <div class="project-num">04</div>
+          <div class="project-tag">Formation</div>
+          <h3 class="project-title">Profil LinkedIn pro</h3>
+          <p class="project-period">Octobre 2024</p>
+          <p class="project-desc">Création et structuration d'un profil professionnel pour gérer mon identité numérique et développer mon réseau IT.</p>
+          <div class="project-skills"><span>Identité pro</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="formation" href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=q6JrImCC2SKa" target="_blank" rel="noopener">
+          <div class="project-num">05</div>
+          <div class="project-tag">Formation</div>
+          <h3 class="project-title">Gestion de tickets GLPI</h3>
+          <p class="project-period">Mai — Juin 2025</p>
+          <p class="project-desc">Prise en main de GLPI pour collecter, suivre et orienter les demandes utilisateurs — simulation helpdesk.</p>
+          <div class="project-skills"><span>Incidents</span><span>Suivi</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="formation" href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=p1EgKsHwgJXr" target="_blank" rel="noopener">
+          <div class="project-num">06</div>
+          <div class="project-tag">Formation</div>
+          <h3 class="project-title">Blog de cinéma</h3>
+          <p class="project-period">Janvier — Février 2025</p>
+          <p class="project-desc">Création d'un blog dédié au cinéma : conception, mise en ligne et gestion en mode projet.</p>
+          <div class="project-skills"><span>Web</span><span>Mode projet</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project project-feature" data-cat="bunzl" href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=I3H9Yemo2M2k" target="_blank" rel="noopener">
+          <div class="project-num">07</div>
+          <div class="project-tag tag-bunzl">BUNZL</div>
+          <h3 class="project-title">Déploiement Office 365 — 1000 postes</h3>
+          <p class="project-period">Mai — Juin 2025</p>
+          <p class="project-desc">Migration d'Office 2016 vers Office 365 sur ~1000 postes, via un script PowerShell automatisé sur NinjaOne RMM. Optimisation des coûts de licence.</p>
+          <div class="project-skills"><span>PowerShell</span><span>NinjaOne</span><span>O365</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="bunzl" href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=ILPG9QWsSjyE" target="_blank" rel="noopener">
+          <div class="project-num">08</div>
+          <div class="project-tag tag-bunzl">BUNZL</div>
+          <h3 class="project-title">Migration d'antivirus via NinjaOne</h3>
+          <p class="project-period">Mai 2025</p>
+          <p class="project-desc">Suppression de l'ancien antivirus et installation du nouveau via script de masse exécuté sur ~1000 postes à distance.</p>
+          <div class="project-skills"><span>NinjaOne</span><span>Sécurité</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="bunzl" href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=aGhLMvwuJbfA" target="_blank" rel="noopener">
+          <div class="project-num">09</div>
+          <div class="project-tag tag-bunzl">BUNZL</div>
+          <h3 class="project-title">Sécurisation des postes</h3>
+          <p class="project-period">Juin 2025</p>
+          <p class="project-desc">Désactivation des protocoles SSL et TLS 1.0/1.1 obsolètes via PowerShell, configuration fine SSL/TLS via IIS Crypto GUI.</p>
+          <div class="project-skills"><span>PowerShell</span><span>TLS</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="bunzl" href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=MoyexfS8wwtJ" target="_blank" rel="noopener">
+          <div class="project-num">10</div>
+          <div class="project-tag tag-bunzl">BUNZL</div>
+          <h3 class="project-title">Support utilisateur & collaboration</h3>
+          <p class="project-period">Mai — Juin 2025</p>
+          <p class="project-desc">Dépannage N1 pour Compta et Gestion, réunions Teams, traduction EN→FR de campagnes de sensibilisation cybersécurité.</p>
+          <div class="project-skills"><span>Helpdesk</span><span>Teams</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project project-feature" data-cat="bunzl" href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=MQcGwBtQzqpX" target="_blank" rel="noopener">
+          <div class="project-num">11</div>
+          <div class="project-tag tag-bunzl">BUNZL</div>
+          <h3 class="project-title">Automatisation & blocage géo Python</h3>
+          <p class="project-period">Juin 2025</p>
+          <p class="project-desc">Script Python qui bloque les flux entrants/sortants depuis certains pays au pare-feu BCE. Scripts PowerShell d'inventaire (.exe, .kdbx) pour audits.</p>
+          <div class="project-skills"><span>Python</span><span>PowerShell</span><span>Firewall</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project project-feature" data-cat="deco" href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=eNmqRiqADyoT" target="_blank" rel="noopener">
+          <div class="project-num">12</div>
+          <div class="project-tag tag-deco">Déco-Plâtre</div>
+          <h3 class="project-title">Site vitrine SAS Déco-Plâtre</h3>
+          <p class="project-period">Janv — Févr 2026</p>
+          <p class="project-desc">Création d'un site vitrine complet pour donner une présence en ligne à l'entreprise. HTML/CSS/JS pur, en binôme via Replit.</p>
+          <div class="project-skills"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="deco" href="#contact">
+          <div class="project-num">13</div>
+          <div class="project-tag tag-deco">Déco-Plâtre</div>
+          <h3 class="project-title">Mise en ligne via GitHub Pages</h3>
+          <p class="project-period">Janvier — Février 2026</p>
+          <p class="project-desc">Hébergement gratuit du site vitrine sur GitHub Pages. Configuration du dépôt, déploiement et accompagnement de l'entreprise.</p>
+          <div class="project-skills"><span>GitHub</span><span>Déploiement</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+        <a class="project" data-cat="deco" href="#contact">
+          <div class="project-num">14</div>
+          <div class="project-tag tag-deco">Déco-Plâtre</div>
+          <h3 class="project-title">Nettoyage des PCs</h3>
+          <p class="project-period">Février 2026</p>
+          <p class="project-desc">Recensement, identification des éléments supprimables, assistant de stockage Windows, nettoyage des fichiers système — données métier préservées.</p>
+          <div class="project-skills"><span>Patrimoine IT</span></div>
+          <div class="project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============= SKILLS ============= -->
+    <section id="skills" class="section">
       <div class="section-head">
-        <span class="section-tag">03 — Parcours</span>
-        <h2 class="section-title">Mon <span class="accent-italic">parcours</span> scolaire</h2>
+        <span class="section-num">03</span>
+        <span class="section-tag">Compétences</span>
       </div>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2024 — 2026</div>
-          <div class="timeline-card">
-            <div class="timeline-card-head">
-              <h3>BTS SIO · option SLAM</h3>
-              <span class="timeline-status">En cours</span>
-            </div>
-            <p class="timeline-school">Lycée Chaptal — Quimper</p>
-            <p class="timeline-desc">
-              Brevet de Technicien Supérieur en Services Informatiques aux Organisations,
-              option Solutions Logicielles et Applications Métiers. Formation complète
-              au développement, à la gestion de bases de données, à la cybersécurité
-              et au travail en mode projet.
-            </p>
+      <h2 class="section-title reveal">
+        La <span class="grad-text">stack technique</span> que je manipule au quotidien.
+      </h2>
+
+      <div class="skills">
+        <div class="skill-card reveal">
+          <div class="skill-num">01</div>
+          <h3>Langages</h3>
+          <div class="skill-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <span>PHP</span><span>Python</span><span>Java</span>
+            <span>C#</span><span>PowerShell</span>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2021 — 2024</div>
-          <div class="timeline-card">
-            <div class="timeline-card-head">
-              <h3>Baccalauréat Général</h3>
-              <span class="timeline-status timeline-status-done">Mention AB</span>
-            </div>
-            <p class="timeline-school">Lycée Auguste Brizeux — Quimper</p>
-            <p class="timeline-desc">
-              Baccalauréat Général obtenu en 2024 avec mention <em>Assez Bien</em>.
-              Spécialités <strong>Mathématiques</strong> et
-              <strong>Numérique &amp; Sciences Informatiques (NSI)</strong>.
-            </p>
+        <div class="skill-card reveal">
+          <div class="skill-num">02</div>
+          <h3>Bases de données</h3>
+          <div class="skill-tags">
+            <span>MySQL</span><span>PostgreSQL</span><span>SQL</span>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-period">2018 — 2021</div>
-          <div class="timeline-card">
-            <div class="timeline-card-head">
-              <h3>Diplôme National du Brevet</h3>
-              <span class="timeline-status timeline-status-done">Obtenu</span>
-            </div>
-            <p class="timeline-school">Collège Brizeux — Quimper</p>
-            <p class="timeline-desc">
-              Scolarité au collège suivie de l'orientation vers la voie générale.
-            </p>
+        <div class="skill-card reveal">
+          <div class="skill-num">03</div>
+          <h3>Outils & Workflow</h3>
+          <div class="skill-tags">
+            <span>Git</span><span>GitHub</span><span>VS Code</span>
+            <span>Figma</span><span>Replit</span><span>GLPI</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-num">04</div>
+          <h3>Réseaux & Virtualisation</h3>
+          <div class="skill-tags">
+            <span>Cisco PT</span><span>VMware</span><span>VirtualBox</span>
+            <span>NinjaOne</span><span>Office 365</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============= INTERNSHIPS ============= -->
-  <section id="internships" class="section">
-    <div class="container">
+    <!-- ============= EXPERIENCE ============= -->
+    <section id="experience" class="section">
       <div class="section-head">
-        <span class="section-tag">04 — Stages</span>
-        <h2 class="section-title">Mes <span class="accent-italic">stages</span> en entreprise</h2>
-        <p class="section-lead">
-          Deux expériences professionnelles complémentaires : l'une dans un groupe international de distribution,
-          l'autre dans une PME locale du bâtiment.
-        </p>
+        <span class="section-num">04</span>
+        <span class="section-tag">Parcours</span>
       </div>
 
-      <a href="assets/docs/Tableau_de_Synthese.pdf" target="_blank" class="big-cta">
+      <h2 class="section-title reveal">
+        Stages, formation, <span class="grad-text">résultats concrets</span>.
+      </h2>
+
+      <a href="assets/docs/Tableau_de_Synthese.pdf" target="_blank" rel="noopener" class="big-cta reveal">
         <div class="big-cta-content">
           <span class="big-cta-label">Document E5</span>
           <span class="big-cta-title">Tableau de Synthèse des Réalisations Professionnelles</span>
@@ -347,514 +426,112 @@
         </div>
       </a>
 
-      <div class="internships-grid">
-        <!-- BUNZL -->
-        <article class="internship-card">
-          <div class="internship-card-glow"></div>
-          <header class="internship-head">
-            <div class="internship-logo">
-              <img src="assets/images/bunzl-logo.png" alt="Logo BUNZL">
-            </div>
-            <div class="internship-meta">
-              <span class="internship-year">1ère année</span>
-              <span class="internship-dates">19/05/2025 — 27/06/2025</span>
-            </div>
-          </header>
-          <h3 class="internship-title">BUNZL <span class="accent-italic">France</span></h3>
-          <p class="internship-location">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            440 Rte de Rosporden, 29000 Quimper
-          </p>
-          <p class="internship-desc">
-            Stage de 6 semaines au sein d'un groupe international de distribution.
-            J'ai contribué à la <strong>sécurisation</strong> et au <strong>déploiement</strong>
-            d'environ 1000 postes informatiques répartis partout en France, via des scripts
-            PowerShell et le RMM NinjaOne.
-          </p>
+      <div class="timeline">
 
-          <div class="mission-list">
-            <div class="mission-item">
-              <span class="mission-bullet"></span>
-              <div>
-                <strong>Migration d'antivirus &amp; déploiement Office 365</strong>
-                <span>via NinjaOne RMM, scripts PowerShell automatisés</span>
-              </div>
-            </div>
-            <div class="mission-item">
-              <span class="mission-bullet"></span>
-              <div>
-                <strong>Sécurisation des postes</strong>
-                <span>désactivation des protocoles obsolètes (SSL, TLS 1.0/1.1), IIS Crypto GUI</span>
-              </div>
-            </div>
-            <div class="mission-item">
-              <span class="mission-bullet"></span>
-              <div>
-                <strong>Script Python de blocage géographique</strong>
-                <span>sur le pare-feu BCE — politique de pare-feu groupe</span>
-              </div>
-            </div>
-            <div class="mission-item">
-              <span class="mission-bullet"></span>
-              <div>
-                <strong>Support utilisateur &amp; collaboration</strong>
-                <span>Microsoft Teams, dépannage, environnement international</span>
-              </div>
-            </div>
+        <div class="tl-item reveal">
+          <div class="tl-mark"></div>
+          <div class="tl-meta">
+            <span class="tl-date">2026 · 6 sem.</span>
+            <span class="tl-type type-stage">Stage</span>
           </div>
-
-          <div class="internship-tags">
-            <span class="tag">PowerShell</span>
-            <span class="tag">Python</span>
-            <span class="tag">NinjaOne</span>
-            <span class="tag">Office 365</span>
-            <span class="tag">Sécurité</span>
+          <h3 class="tl-title">SAS Déco-Plâtre</h3>
+          <p class="tl-role">Création d'un site vitrine — Quimper (29)</p>
+          <p class="tl-text">Avec un binôme, conception et lancement complet du site vitrine de l'entreprise (HTML/CSS/JS, sans CMS), hébergé via GitHub Pages. Nettoyage du parc en parallèle.</p>
+          <div class="tl-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub</span>
           </div>
-
-          <div class="internship-actions">
-            <a href="assets/docs/Rapport_Stage_BUNZL.pdf" target="_blank" class="btn btn-small">
+          <div class="tl-actions">
+            <a href="assets/docs/Rapport_Stage_DecoPlatre.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6M9 9h1"/></svg>
               Rapport de stage
             </a>
-            <a href="https://maps.google.com/?q=440+Rte+de+Rosporden,+29000+Quimper" target="_blank" class="btn btn-small btn-ghost">
+            <a href="https://maps.google.com/?q=107+Av.+Pierre+Mendès+France,+29000+Quimper" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Voir sur la carte
             </a>
           </div>
-        </article>
+        </div>
 
-        <!-- DECO PLATRE -->
-        <article class="internship-card">
-          <div class="internship-card-glow"></div>
-          <header class="internship-head">
-            <div class="internship-logo internship-logo-text">
-              <span>Déco<br>Plâtre</span>
-            </div>
-            <div class="internship-meta">
-              <span class="internship-year">2ème année</span>
-              <span class="internship-dates">05/01/2026 — 14/02/2026</span>
-            </div>
-          </header>
-          <h3 class="internship-title">SAS Déco-<span class="accent-italic">Plâtre</span></h3>
-          <p class="internship-location">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            107 Av. Pierre Mendès France, 29000 Quimper
-          </p>
-          <p class="internship-desc">
-            Stage de 6 semaines dans une PME locale du secteur du bâtiment.
-            L'entreprise n'avait <strong>aucune présence en ligne</strong> :
-            avec un autre stagiaire, nous avons conçu et mis en ligne son
-            <strong>site vitrine</strong> intégral, codé entièrement en HTML / CSS / JavaScript.
-          </p>
-
-          <div class="mission-list">
-            <div class="mission-item">
-              <span class="mission-bullet"></span>
-              <div>
-                <strong>Création d'un site vitrine</strong>
-                <span>HTML, CSS, JavaScript — sans CMS, code maison</span>
-              </div>
-            </div>
-            <div class="mission-item">
-              <span class="mission-bullet"></span>
-              <div>
-                <strong>Travail en mode projet à 2</strong>
-                <span>analyse des objectifs, planification, co-développement sur Replit</span>
-              </div>
-            </div>
-            <div class="mission-item">
-              <span class="mission-bullet"></span>
-              <div>
-                <strong>Mise en ligne du service</strong>
-                <span>hébergement gratuit via GitHub Pages</span>
-              </div>
-            </div>
-            <div class="mission-item">
-              <span class="mission-bullet"></span>
-              <div>
-                <strong>Gestion du patrimoine informatique</strong>
-                <span>nettoyage des PC, assistant de stockage, fichiers système</span>
-              </div>
-            </div>
+        <div class="tl-item reveal">
+          <div class="tl-mark"></div>
+          <div class="tl-meta">
+            <span class="tl-date">2025 · 6 sem.</span>
+            <span class="tl-type type-stage">Stage</span>
           </div>
-
-          <div class="internship-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">GitHub</span>
-            <span class="tag">Mode projet</span>
+          <h3 class="tl-title">BUNZL France</h3>
+          <p class="tl-role">Sécurité et déploiement parc IT — Quimper (29)</p>
+          <p class="tl-text">Contribution à la sécurité et au déploiement de ~1000 postes répartis en France via PowerShell et NinjaOne RMM. Migration antivirus, déploiement Office 365, durcissement TLS, blocage géographique Python.</p>
+          <div class="tl-tags">
+            <span>PowerShell</span><span>Python</span><span>NinjaOne</span><span>O365</span><span>Sécurité</span>
           </div>
-
-          <div class="internship-actions">
-            <a href="assets/docs/Rapport_Stage_DecoPlatre.pdf" target="_blank" class="btn btn-small">
+          <div class="tl-actions">
+            <a href="assets/docs/Rapport_Stage_BUNZL.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6M9 9h1"/></svg>
               Rapport de stage
             </a>
-            <a href="https://maps.google.com/?q=107+Av.+Pierre+Mendès+France,+29000+Quimper" target="_blank" class="btn btn-small btn-ghost">
+            <a href="https://maps.google.com/?q=440+Rte+de+Rosporden,+29000+Quimper" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Voir sur la carte
             </a>
           </div>
-        </article>
-      </div>
-    </div>
-  </section>
+        </div>
 
-  <!-- ============= REALISATIONS / PROJECTS ============= -->
-  <section id="projects" class="section">
-    <div class="container">
+        <div class="tl-item reveal">
+          <div class="tl-mark"></div>
+          <div class="tl-meta">
+            <span class="tl-date">2024 — 2026</span>
+            <span class="tl-type type-edu">Formation</span>
+          </div>
+          <h3 class="tl-title">BTS SIO · Option SLAM</h3>
+          <p class="tl-role">Lycée Chaptal — Quimper</p>
+          <p class="tl-text">Solutions Logicielles et Applications Métiers. Développement, bases de données, cybersécurité, mode projet.</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-mark"></div>
+          <div class="tl-meta">
+            <span class="tl-date">2021 — 2024</span>
+            <span class="tl-type type-edu">Formation</span>
+          </div>
+          <h3 class="tl-title">Baccalauréat Général · Mention AB</h3>
+          <p class="tl-role">Lycée Auguste Brizeux — Quimper</p>
+          <p class="tl-text">Spécialités Mathématiques et NSI (Numérique et Sciences Informatiques).</p>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-mark"></div>
+          <div class="tl-meta">
+            <span class="tl-date">2018 - 2021</span>
+            <span class="tl-type type-edu">Formation</span>
+          </div>
+          <h3 class="tl-title">Diplôme National du Brevet · Mention Bien</h3>
+          <p class="tl-role">Collège Les Cordeliers — Quimper</p>
+          <p class="tl-text">Obtention du DNB avec mention Bien.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============= VEILLE ============= -->
+    <section id="veille" class="section">
       <div class="section-head">
-        <span class="section-tag">05 — Réalisations</span>
-        <h2 class="section-title">Mes <span class="accent-italic">activités</span> professionnelles</h2>
-        <p class="section-lead">
-          14 réalisations complétées, classées selon les compétences validées du référentiel BTS SIO.
-          Filtrez par catégorie pour explorer.
-        </p>
+        <span class="section-num">05</span>
+        <span class="section-tag">Veille</span>
       </div>
 
-      <div class="filter-row">
-        <button class="filter-btn active" data-filter="all">Tout afficher</button>
-        <button class="filter-btn" data-filter="formation">Formation</button>
-        <button class="filter-btn" data-filter="bunzl">Stage BUNZL</button>
-        <button class="filter-btn" data-filter="deco">Stage Déco Plâtre</button>
-      </div>
+      <h2 class="section-title reveal">
+        Veille <span class="grad-text">Technologique</span>
+      </h2>
+      <p class="reveal" style="color:var(--text-muted);max-width:60ch;margin-bottom:2.5rem;">
+        Une veille active alimentée bimestriellement sur la sécurité des applications mobiles —
+        un enjeu majeur en BTS SIO SLAM, où je serai amené à concevoir des applis robustes face aux cybermenaces.
+      </p>
 
-      <div class="projects-grid">
-
-        <!-- FORMATION -->
-        <article class="project-card" data-cat="formation">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P01</span>
-            <span class="project-card-tag tag-formation">Formation</span>
-          </div>
-          <h3 class="project-card-title">Création d'un Site Web</h3>
-          <p class="project-card-period">Mai 2025 — Juin 2025</p>
-          <p class="project-card-desc">
-            Conception d'un site web (Kafkerin) dans le cadre de ma formation, mêlant valorisation
-            d'image, mise à disposition d'un service et travail en mode projet.
-          </p>
-          <div class="project-card-skills">
-            <span>Présence en ligne</span>
-            <span>Service informatique</span>
-            <span>Mode projet</span>
-          </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=qEwWqi1NwHQ4" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <article class="project-card" data-cat="formation">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P02</span>
-            <span class="project-card-tag tag-formation">Formation</span>
-          </div>
-          <h3 class="project-card-title">Création de ce Portfolio</h3>
-          <p class="project-card-period">Janvier 2025 — En cours</p>
-          <p class="project-card-desc">
-            Développement et maintien d'un portfolio personnel pour présenter mon parcours,
-            mes compétences et mes projets — outil clé de mon développement professionnel.
-          </p>
-          <div class="project-card-skills">
-            <span>Développement professionnel</span>
-            <span>Identité numérique</span>
-          </div>
-        </article>
-
-        <article class="project-card" data-cat="formation">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P03</span>
-            <span class="project-card-tag tag-formation">Formation</span>
-          </div>
-          <h3 class="project-card-title">Veille Informatique</h3>
-          <p class="project-card-period">Janvier 2025 — En cours</p>
-          <p class="project-card-desc">
-            Mise en place d'une veille technologique régulière sur la <em>sécurité des
-            applications mobiles</em>, alimentée par des sources fiables (CNIL, Zimperium, Kaspersky…).
-          </p>
-          <div class="project-card-skills">
-            <span>Veille informationnelle</span>
-            <span>Apprentissage personnel</span>
-          </div>
-          <a href="#veille" class="project-card-link project-card-link-internal">
-            <span>Voir la veille</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </article>
-
-        <article class="project-card" data-cat="formation">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P04</span>
-            <span class="project-card-tag tag-formation">Formation</span>
-          </div>
-          <h3 class="project-card-title">Création d'un Profil LinkedIn</h3>
-          <p class="project-card-period">01/10/2024</p>
-          <p class="project-card-desc">
-            Création et structuration d'un profil professionnel LinkedIn pour gérer
-            mon identité numérique et développer mon réseau dans le secteur IT.
-          </p>
-          <div class="project-card-skills">
-            <span>Identité professionnelle</span>
-          </div>
-          <a href="https://www.linkedin.com/in/youssef-el-farissi-245a30369/" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir mon profil</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <article class="project-card" data-cat="formation">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P05</span>
-            <span class="project-card-tag tag-formation">Formation</span>
-          </div>
-          <h3 class="project-card-title">Gestion de Tickets GLPI</h3>
-          <p class="project-card-period">Mai 2025 — Juin 2025</p>
-          <p class="project-card-desc">
-            Prise en main de l'outil GLPI pour collecter, suivre et orienter
-            les demandes d'assistance des utilisateurs — simulation d'un poste de helpdesk.
-          </p>
-          <div class="project-card-skills">
-            <span>Réponse aux incidents</span>
-            <span>Suivi des demandes</span>
-          </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=q6JrImCC2SKa" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <article class="project-card" data-cat="formation">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P06</span>
-            <span class="project-card-tag tag-formation">Formation</span>
-          </div>
-          <h3 class="project-card-title">Blog de Cinéma</h3>
-          <p class="project-card-period">Janvier 2025 — Février 2025</p>
-          <p class="project-card-desc">
-            Création d'un blog dédié au cinéma : conception du site, mise en ligne
-            et gestion en mode projet — un mini-projet aux multiples compétences validées.
-          </p>
-          <div class="project-card-skills">
-            <span>Présence en ligne</span>
-            <span>Mode projet</span>
-            <span>Service informatique</span>
-          </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=p1EgKsHwgJXr" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <!-- BUNZL -->
-        <article class="project-card project-card-pro" data-cat="bunzl">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P07</span>
-            <span class="project-card-tag tag-bunzl">BUNZL</span>
-          </div>
-          <h3 class="project-card-title">Déploiement d'Office 365 &amp; Gestion des Licences</h3>
-          <p class="project-card-period">19/05/2025 — 13/06/2025</p>
-          <p class="project-card-desc">
-            Migration de Office 2016 vers Office 365 sur un parc d'environ 1000 postes,
-            avec création d'un script PowerShell automatisé sur NinjaOne. Optimisation
-            du coût des licences en désactivant les comptes non liés à une adresse mail.
-          </p>
-          <div class="project-card-skills">
-            <span>Patrimoine informatique</span>
-            <span>Service informatique</span>
-            <span>Mode projet</span>
-            <span>Incidents</span>
-          </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=I3H9Yemo2M2k" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <article class="project-card project-card-pro" data-cat="bunzl">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P08</span>
-            <span class="project-card-tag tag-bunzl">BUNZL</span>
-          </div>
-          <h3 class="project-card-title">Migration d'Antivirus via NinjaOne</h3>
-          <p class="project-card-period">19/05/2025 — 23/05/2025</p>
-          <p class="project-card-desc">
-            Suppression de l'ancien antivirus et installation du nouveau via un script
-            de masse exécuté sur ~1000 postes, à distance, depuis le RMM NinjaOne.
-            Suivi et correction des oublis sur certaines machines.
-          </p>
-          <div class="project-card-skills">
-            <span>Patrimoine informatique</span>
-            <span>Service informatique</span>
-            <span>Mode projet</span>
-            <span>Incidents</span>
-          </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=ILPG9QWsSjyE" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <article class="project-card project-card-pro" data-cat="bunzl">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P09</span>
-            <span class="project-card-tag tag-bunzl">BUNZL</span>
-          </div>
-          <h3 class="project-card-title">Sécurisation des Postes</h3>
-          <p class="project-card-period">02/06/2025 — 05/06/2025</p>
-          <p class="project-card-desc">
-            Désactivation des protocoles SSL et TLS 1.0/1.1 obsolètes via un script PowerShell
-            sur le groupe CDB, et installation d'IIS Crypto GUI pour configurer
-            les paramètres SSL/TLS de manière fine.
-          </p>
-          <div class="project-card-skills">
-            <span>Patrimoine informatique</span>
-            <span>Mode projet</span>
-            <span>Service informatique</span>
-          </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=aGhLMvwuJbfA" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <article class="project-card project-card-pro" data-cat="bunzl">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P10</span>
-            <span class="project-card-tag tag-bunzl">BUNZL</span>
-          </div>
-          <h3 class="project-card-title">Support Utilisateur &amp; Collaboration</h3>
-          <p class="project-card-period">20/05/2025 — 05/06/2025</p>
-          <p class="project-card-desc">
-            Dépannage de premier niveau pour les équipes Comptabilité et Gestion,
-            réunions Teams avec administrateurs systèmes et sécurité, traduction
-            de messages de sensibilisation à la cybersécurité (EN → FR).
-          </p>
-          <div class="project-card-skills">
-            <span>Réponse aux incidents</span>
-            <span>Mode projet</span>
-          </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=MoyexfS8wwtJ" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <article class="project-card project-card-pro" data-cat="bunzl">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P11</span>
-            <span class="project-card-tag tag-bunzl">BUNZL</span>
-          </div>
-          <h3 class="project-card-title">Automatisation des Tâches</h3>
-          <p class="project-card-period">02/06/2025 — 05/06/2025</p>
-          <p class="project-card-desc">
-            Développement d'un script Python qui bloque les flux entrants/sortants
-            depuis certains pays au niveau du pare-feu BCE, et de scripts PowerShell
-            d'inventaire (.exe, .kdbx) pour les audits de sécurité.
-          </p>
-          <div class="project-card-skills">
-            <span>Patrimoine informatique</span>
-            <span>Mode projet</span>
-            <span>Service informatique</span>
-          </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=MQcGwBtQzqpX" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <!-- DECO PLATRE -->
-        <article class="project-card project-card-pro" data-cat="deco">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P12</span>
-            <span class="project-card-tag tag-deco">Déco Plâtre</span>
-          </div>
-          <h3 class="project-card-title">Site Vitrine pour l'Entreprise</h3>
-          <p class="project-card-period">05/01/2026 — 14/02/2026</p>
-          <p class="project-card-desc">
-            Création d'un site vitrine complet pour donner une présence en ligne à l'entreprise
-            qui n'en avait aucune. Tout codé en HTML, CSS et JavaScript, en binôme avec un
-            autre stagiaire via Replit.
-          </p>
-          <div class="project-card-skills">
-            <span>Présence en ligne</span>
-            <span>Mode projet</span>
-          </div>
-          <a href="https://yelfarissi-drive.mytoutatice.cloud/public?sharecode=eNmqRiqADyoT" target="_blank" rel="noopener" class="project-card-link">
-            <span>Voir le projet</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6"/></svg>
-          </a>
-        </article>
-
-        <article class="project-card project-card-pro" data-cat="deco">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P13</span>
-            <span class="project-card-tag tag-deco">Déco Plâtre</span>
-          </div>
-          <h3 class="project-card-title">Mise en Ligne via GitHub</h3>
-          <p class="project-card-period">Janvier 2026 — Février 2026</p>
-          <p class="project-card-desc">
-            Hébergement gratuit du site vitrine sur GitHub Pages — le code étant léger
-            et ne nécessitant pas de back-end. Configuration du dépôt, déploiement
-            automatique et accompagnement de l'entreprise dans la prise en main.
-          </p>
-          <div class="project-card-skills">
-            <span>Service informatique</span>
-          </div>
-        </article>
-
-        <article class="project-card project-card-pro" data-cat="deco">
-          <div class="project-card-glow"></div>
-          <div class="project-card-head">
-            <span class="project-card-num">P14</span>
-            <span class="project-card-tag tag-deco">Déco Plâtre</span>
-          </div>
-          <h3 class="project-card-title">Nettoyage des PCs</h3>
-          <p class="project-card-period">13/02/2026 — 14/02/2026</p>
-          <p class="project-card-desc">
-            Recensement des fichiers, identification des éléments supprimables,
-            utilisation de l'assistant de stockage Windows et nettoyage des fichiers
-            système — tout en préservant les données métier essentielles.
-          </p>
-          <div class="project-card-skills">
-            <span>Patrimoine informatique</span>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============= VEILLE ============= -->
-  <section id="veille" class="section">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">06 — Veille</span>
-        <h2 class="section-title">Veille <span class="accent-italic">technologique</span></h2>
-        <p class="section-lead">
-          Une veille active alimentée bimestriellement sur la sécurité des applications mobiles —
-          un enjeu majeur en BTS SIO SLAM, où je serai amené à concevoir des applis robustes face aux cybermenaces.
-        </p>
-      </div>
-
-      <div class="veille-hero">
+      <div class="veille-hero reveal">
         <div class="veille-hero-meta">
           <span class="veille-tag">Sujet de veille</span>
         </div>
-        <h3 class="veille-hero-title">Sécurité des Applications <span class="accent-italic">Mobiles</span></h3>
+        <h3 class="veille-hero-title">Sécurité des Applications <em>Mobiles</em></h3>
         <p class="veille-hero-desc">
           Les applications mobiles sont devenues indispensables (banque, messagerie, santé, travail…)
           et attirent autant de cybermenaces. Suivi régulier sur 2 ans des vulnérabilités, recommandations CNIL,
@@ -878,43 +555,37 @@
         </div>
       </div>
 
-      <!-- TIMELINE NAV -->
-      <div class="veille-timeline" id="veilleTimeline" role="tablist" aria-label="Timeline de la veille">
+      <div class="veille-timeline reveal" id="veilleTimeline">
         <button class="vt-arrow vt-arrow-prev" id="vtPrev" aria-label="Période précédente">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
         <div class="vt-track" id="vtTrack">
-          <button class="vt-period" data-period="0" role="tab"><span class="vt-period-num">1</span><span class="vt-period-label">Sept – Oct 2024</span></button>
-          <button class="vt-period" data-period="1" role="tab"><span class="vt-period-num">2</span><span class="vt-period-label">Nov – Déc 2024</span></button>
-          <button class="vt-period" data-period="2" role="tab"><span class="vt-period-num">3</span><span class="vt-period-label">Jan – Fév 2025</span></button>
-          <button class="vt-period" data-period="3" role="tab"><span class="vt-period-num">4</span><span class="vt-period-label">Mars – Avr 2025</span></button>
-          <button class="vt-period" data-period="4" role="tab"><span class="vt-period-num">5</span><span class="vt-period-label">Mai – Juin 2025</span></button>
-          <button class="vt-period" data-period="5" role="tab"><span class="vt-period-num">6</span><span class="vt-period-label">Juil – Août 2025</span></button>
-          <button class="vt-period" data-period="6" role="tab"><span class="vt-period-num">7</span><span class="vt-period-label">Sept – Oct 2025</span></button>
-          <button class="vt-period" data-period="7" role="tab"><span class="vt-period-num">8</span><span class="vt-period-label">Nov – Déc 2025</span></button>
-          <button class="vt-period" data-period="8" role="tab"><span class="vt-period-num">9</span><span class="vt-period-label">Jan – Fév 2026</span></button>
-          <button class="vt-period" data-period="9" role="tab"><span class="vt-period-num">10</span><span class="vt-period-label">Mars – Mai 2026</span></button>
+          <button class="vt-period active" data-period="0"><span class="vt-period-num">1</span><span class="vt-period-label">Sept – Oct 2024</span></button>
+          <button class="vt-period" data-period="1"><span class="vt-period-num">2</span><span class="vt-period-label">Nov – Déc 2024</span></button>
+          <button class="vt-period" data-period="2"><span class="vt-period-num">3</span><span class="vt-period-label">Jan – Fév 2025</span></button>
+          <button class="vt-period" data-period="3"><span class="vt-period-num">4</span><span class="vt-period-label">Mars – Avr 2025</span></button>
+          <button class="vt-period" data-period="4"><span class="vt-period-num">5</span><span class="vt-period-label">Mai – Juin 2025</span></button>
+          <button class="vt-period" data-period="5"><span class="vt-period-num">6</span><span class="vt-period-label">Juil – Août 2025</span></button>
+          <button class="vt-period" data-period="6"><span class="vt-period-num">7</span><span class="vt-period-label">Sept – Oct 2025</span></button>
+          <button class="vt-period" data-period="7"><span class="vt-period-num">8</span><span class="vt-period-label">Nov – Déc 2025</span></button>
+          <button class="vt-period" data-period="8"><span class="vt-period-num">9</span><span class="vt-period-label">Jan – Fév 2026</span></button>
+          <button class="vt-period" data-period="9"><span class="vt-period-num">10</span><span class="vt-period-label">Mars – Mai 2026</span></button>
         </div>
         <button class="vt-arrow vt-arrow-next" id="vtNext" aria-label="Période suivante">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </button>
       </div>
 
-      <!-- TIMELINE CONTENT -->
-      <div class="veille-content">
+      <div class="veille-content reveal">
         <div class="vc-header">
           <span class="vc-period-tag" id="vcPeriodTag">Période 1</span>
           <h3 class="vc-period-title" id="vcPeriodTitle">Septembre – Octobre 2024</h3>
           <p class="vc-period-summary" id="vcPeriodSummary"></p>
         </div>
-
-        <div class="vc-articles" id="vcArticles">
-          <!-- Les articles sont injectés via JS -->
-        </div>
+        <div class="vc-articles" id="vcArticles"></div>
       </div>
 
-      <!-- CONCLUSION -->
-      <div class="veille-conclusion">
+      <div class="veille-conclusion reveal">
         <div class="vconc-head">
           <span class="vconc-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -939,36 +610,34 @@
         </p>
       </div>
 
-      <div class="veille-sources">
-        <span class="veille-sources-label">Sources suivies :</span>
-        <a href="https://www.cnil.fr/" target="_blank" rel="noopener">CNIL</a>
-        <span class="dot">·</span>
-        <a href="https://source.android.com/docs/security/bulletin" target="_blank" rel="noopener">Android Security Bulletin</a>
-        <span class="dot">·</span>
-        <a href="https://support.apple.com/fr-fr/100100" target="_blank" rel="noopener">Apple Security</a>
-        <span class="dot">·</span>
-        <a href="https://www.ecranmobile.fr/" target="_blank" rel="noopener">Écran Mobile</a>
-        <span class="dot">·</span>
-        <a href="https://www.kaspersky.fr/" target="_blank" rel="noopener">Kaspersky</a>
-        <span class="dot">·</span>
-        <a href="https://owasp.org/www-project-mobile-app-security/" target="_blank" rel="noopener">OWASP MASVS</a>
-        <span class="dot">·</span>
-        <a href="https://www.zimperium.com/" target="_blank" rel="noopener">Zimperium</a>
-        <span class="dot">·</span>
-        <a href="https://www.lemondeinformatique.fr/" target="_blank" rel="noopener">Le Monde Informatique</a>
+      <div class="veille-sources reveal">
+        <span class="sources-label">Sources suivies</span>
+        <div class="sources-grid">
+          <a href="https://www.cnil.fr/" target="_blank" rel="noopener">CNIL</a>
+          <a href="https://owasp.org/www-project-mobile-app-security/" target="_blank" rel="noopener">OWASP MASVS</a>
+          <a href="https://source.android.com/docs/security/bulletin" target="_blank" rel="noopener">Android Security</a>
+          <a href="https://support.apple.com/fr-fr/100100" target="_blank" rel="noopener">Apple Security</a>
+          <a href="https://www.zimperium.com/" target="_blank" rel="noopener">Zimperium</a>
+          <a href="https://www.kaspersky.fr/" target="_blank" rel="noopener">Kaspersky</a>
+          <a href="https://www.lemondeinformatique.fr/" target="_blank" rel="noopener">Le Monde Informatique</a>
+          <a href="https://www.ecranmobile.fr/" target="_blank" rel="noopener">Écran Mobile</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============= CERTIFICATIONS ============= -->
-  <section id="certifications" class="section">
-    <div class="container">
+    <!-- ============= CERTIFICATIONS ============= -->
+    <section id="certifications" class="section">
       <div class="section-head">
-        <span class="section-tag">07 — Certifications</span>
-        <h2 class="section-title">Mes <span class="accent-italic">certifications</span></h2>
+        <span class="section-num">06</span>
+        <span class="section-tag">Certifications</span>
       </div>
 
-      <div class="certs-grid">
+      <h2 class="section-title reveal">
+        Mes <span class="grad-text">certifications</span>
+      </h2>
+
+      <div class="certs-grid reveal">
+
         <article class="cert-card">
           <div class="cert-hex">
             <span class="cert-hex-label">PIX</span>
@@ -1005,110 +674,75 @@
             <p class="cert-info-note">Niveau Avancé 1 atteint — fortement recommandé en BTS SIO</p>
           </div>
         </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============= CONTACT ============= -->
-  <section id="contact" class="section section-contact">
-    <div class="container">
-      <div class="section-head section-head-center">
-        <span class="section-tag">08 — Contact</span>
-        <h2 class="section-title">Échangeons <span class="accent-italic">ensemble</span></h2>
-        <p class="section-lead">
-          Une question, un projet, une opportunité d'alternance ?
-          N'hésitez pas — je réponds vite.
+      </div>
+    </section>
+
+    <!-- ============= CONTACT ============= -->
+    <section id="contact" class="section section-contact">
+      <div class="section-head">
+        <span class="section-num">07</span>
+        <span class="section-tag">Contact</span>
+      </div>
+
+      <div class="contact-inner">
+        <h2 class="contact-title reveal">
+          Une opportunité,<br>
+          <span class="grad-text">un projet, une question ?</span>
+        </h2>
+
+        <p class="contact-sub reveal">
+          Je suis ouvert aux opportunités de stage, alternance et collaboration sur des projets web ou outillage interne.
         </p>
-      </div>
 
-      <div class="contact-grid">
-        <div class="contact-info">
-          <a href="mailto:yyouss.elff@gmail.com" class="contact-link">
-            <span class="contact-link-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-            </span>
-            <div>
-              <span class="contact-link-label">Email</span>
-              <span class="contact-link-value">yyouss.elff@gmail.com</span>
-            </div>
+        <div class="contact-actions reveal">
+          <a href="mailto:yyouss.elff@gmail.com" class="btn btn-primary btn-lg">
+            yyouss.elff@gmail.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-
-          <a href="https://www.linkedin.com/in/youssef-el-farissi-245a30369/" target="_blank" class="contact-link">
-            <span class="contact-link-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z"/></svg>
-            </span>
-            <div>
-              <span class="contact-link-label">LinkedIn</span>
-              <span class="contact-link-value">/in/youssef-el-farissi</span>
-            </div>
-          </a>
-
-          <a href="https://github.com/sh6n" target="_blank" class="contact-link">
-            <span class="contact-link-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 3 .1 3.3.8.8 1.3 1.9 1.3 3.2 0 4.7-2.9 5.7-5.6 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.9 18.6.5 12 .5z"/></svg>
-            </span>
-            <div>
-              <span class="contact-link-label">GitHub</span>
-              <span class="contact-link-value">@sh6n</span>
-            </div>
-          </a>
-
-          <div class="contact-link contact-link-static">
-            <span class="contact-link-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </span>
-            <div>
-              <span class="contact-link-label">Localisation</span>
-              <span class="contact-link-value">Quimper, Finistère (29)</span>
-            </div>
-          </div>
         </div>
 
-        <form class="contact-form" id="contactForm" action="php/contact.php" method="POST" novalidate>
-          <div class="form-row">
-            <label class="form-field">
-              <span class="form-label">Nom</span>
-              <input type="text" name="name" required placeholder="Votre nom">
-            </label>
-            <label class="form-field">
-              <span class="form-label">Email</span>
-              <input type="email" name="email" required placeholder="vous@exemple.com">
-            </label>
-          </div>
-          <label class="form-field">
-            <span class="form-label">Sujet</span>
-            <input type="text" name="subject" required placeholder="L'objet de votre message">
-          </label>
-          <label class="form-field">
-            <span class="form-label">Message</span>
-            <textarea name="message" rows="5" required placeholder="Votre message..."></textarea>
-          </label>
-          <button type="submit" class="btn btn-primary btn-block">
-            <span>Envoyer le message</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </button>
-          <div class="form-feedback" id="formFeedback"></div>
-        </form>
+        <div class="contact-links reveal">
+          <a href="https://github.com/sh6n" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0a12 12 0 00-3.79 23.39c.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.66-.31-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.31-.54-1.52.11-3.18 0 0 1.01-.32 3.31 1.23a11.49 11.49 0 016.02 0c2.3-1.55 3.31-1.23 3.31-1.23.65 1.66.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0012 0z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/youssef-el-farissi-245a30369/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.36V9h3.41v1.56h.05a3.74 3.74 0 013.36-1.85c3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 11.01-4.13 2.06 2.06 0 01-.01 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          <a href="assets/docs/CV_Youssef_EL_FARISSI.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            CV PDF
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- ============= FOOTER ============= -->
   <footer class="footer">
-    <div class="container footer-inner">
+    <div class="footer-inner">
       <div class="footer-brand">
-        <span class="nav-logo-mark">
-          <span class="nav-logo-letters">YF</span>
-          <span class="nav-logo-ring"></span>
+        <span class="logo-mark">
+          <span class="logo-mark-inner"></span>
         </span>
-        <span>Youssef EL FARISSI</span>
+        <div>
+          <div class="footer-name">Youssef El Farissi</div>
+          <div class="footer-loc">Quimper, Finistère · 2026</div>
+        </div>
       </div>
-      <p class="footer-text">
-        Portfolio · BTS SIO SLAM · Session 2026 · Lycée Chaptal — Quimper
-      </p>
-      <p class="footer-copy">
-        © <span id="year">2026</span> Youssef EL FARISSI — Tous droits réservés
-      </p>
+      <div class="footer-links">
+        <a href="#work">Projets</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/sh6n" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Youssef El Farissi</span>
+      <span>Conçu et codé à Quimper · HTML/CSS/JS</span>
     </div>
   </footer>
 

@@ -1,204 +1,107 @@
-/* ===========================================================
-   YOUSSEF EL FARISSI · PORTFOLIO
-   Interactions & Animations
-   =========================================================== */
+/* ==========================================================================
+   YOUSSEF EL FARISSI — PORTFOLIO
+   Interactions
+   ========================================================================== */
 
 (() => {
   'use strict';
 
-  /* ------ Année dynamique footer ------ */
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  /* ------ Nav scroll state ------ */
+  /* -------- NAV scroll state -------- */
   const nav = document.querySelector('.nav');
-  let lastScroll = 0;
-  const handleScroll = () => {
-    const y = window.scrollY;
-    if (y > 30) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-    lastScroll = y;
-  };
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
-
-  /* ------ Mobile menu toggle ------ */
-  const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
+  const navToggle = document.getElementById('navToggle');
+
+  const onScroll = () => {
+    if (!nav) return;
+    if (window.scrollY > 24) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* -------- Mobile menu toggle -------- */
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      navLinks.classList.toggle('open');
+      const open = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
     });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
         navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
       });
     });
   }
 
-  /* ------ Reveal on scroll ------ */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -60px 0px'
+  /* -------- Reveal on scroll -------- */
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(el => {
+    if (el.dataset.d) el.style.setProperty('--d', el.dataset.d);
   });
 
-  document.querySelectorAll('.section, .timeline-item, .skill-block, .internship-card, .project-card, .veille-card, .cert-card, .contact-link, .big-cta, .veille-hero')
-    .forEach(el => {
-      el.classList.add('fade-up');
-      observer.observe(el);
-    });
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-  /* ------ Hero reveal staggered ------ */
-  document.querySelectorAll('.hero .reveal').forEach(el => {
-    const delay = parseInt(el.dataset.delay || 0, 10);
-    el.style.setProperty('--delay', delay);
-    el.style.animationDelay = `${delay}ms`;
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
+
+  /* -------- Project filters -------- */
+  const filters = document.querySelectorAll('.filter');
+  const projects = document.querySelectorAll('.project');
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.f;
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      projects.forEach(p => {
+        if (f === 'all' || p.dataset.cat === f) p.classList.remove('hidden');
+        else p.classList.add('hidden');
+      });
+    });
   });
 
-  /* ------ Card glow follow cursor ------ */
-  const glowCards = document.querySelectorAll('.skill-block, .internship-card, .project-card');
-  glowCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
+  /* -------- Project cards: cursor-following glow -------- */
+  projects.forEach(card => {
+    card.addEventListener('pointermove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
       const y = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty('--mx', `${x}%`);
-      card.style.setProperty('--my', `${y}%`);
+      card.style.setProperty('--mx', x + '%');
+      card.style.setProperty('--my', y + '%');
     });
   });
 
-  /* ------ Projects filter ------ */
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.dataset.filter;
-      projectCards.forEach(card => {
-        const cat = card.dataset.cat;
-        if (filter === 'all' || cat === filter) {
-          card.classList.remove('hidden');
-          card.style.animation = 'reveal 0.5s var(--ease) forwards';
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
-
-  /* ------ Smooth scroll w/ offset ------ */
+  /* -------- Smooth scroll offset for fixed nav -------- */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href === '#' || href.length < 2) return;
-
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        const offset = 90;
-        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+      const id = link.getAttribute('href');
+      if (id === '#' || id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
   });
 
-  /* ------ Active nav link on scroll ------ */
-  const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a');
+  /* -------- Update copyright year -------- */
+  // Footer year is hard-coded to 2026; left intentionally static.
 
-  const setActiveNav = () => {
-    const y = window.scrollY + 150;
-    let current = '';
-    sections.forEach(sec => {
-      const top = sec.offsetTop;
-      const h = sec.offsetHeight;
-      if (y >= top && y < top + h) current = sec.id;
-    });
-    navAnchors.forEach(a => {
-      a.classList.remove('active-nav');
-      if (a.getAttribute('href') === `#${current}`) {
-        a.classList.add('active-nav');
-      }
-    });
-  };
-  window.addEventListener('scroll', setActiveNav, { passive: true });
+})();
 
-  /* ------ Contact form (graceful fallback if PHP unavailable) ------ */
-  const form = document.getElementById('contactForm');
-  const feedback = document.getElementById('formFeedback');
-
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      feedback.className = 'form-feedback';
-      feedback.textContent = 'Envoi en cours...';
-
-      const data = new FormData(form);
-
-      // Validation côté client
-      const name = data.get('name')?.trim();
-      const email = data.get('email')?.trim();
-      const message = data.get('message')?.trim();
-
-      if (!name || !email || !message) {
-        feedback.className = 'form-feedback error';
-        feedback.textContent = 'Merci de remplir tous les champs.';
-        return;
-      }
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'X-Requested-With': 'XMLHttpRequest' }
-        });
-
-        if (res.ok) {
-          const result = await res.json().catch(() => ({ success: true }));
-          if (result.success) {
-            feedback.className = 'form-feedback success';
-            feedback.textContent = 'Message envoyé ! Je vous réponds rapidement.';
-            form.reset();
-          } else {
-            throw new Error(result.error || 'Erreur');
-          }
-        } else {
-          throw new Error('Erreur serveur');
-        }
-      } catch (err) {
-        // Fallback : ouvrir le mail client
-        feedback.className = 'form-feedback';
-        feedback.innerHTML = 'Le serveur PHP n\'est pas disponible. <a href="mailto:yyouss.elff@gmail.com?subject=' +
-          encodeURIComponent(data.get('subject') || 'Contact portfolio') +
-          '&body=' + encodeURIComponent((data.get('message') || '') + '\n\n— ' + name) +
-          '" style="color: var(--accent-bright); text-decoration: underline;">Cliquez ici pour ouvrir votre client mail</a>.';
-      }
-    });
-  }
-
-  /* ------ Console signature ------ */
-  console.log('%c Youssef EL FARISSI %c · Portfolio BTS SIO SLAM ',
-    'background:#007BFF;color:white;padding:6px 10px;border-radius:4px 0 0 4px;font-weight:bold;',
-    'background:#0a0a0f;color:#9a9aa3;padding:6px 10px;border-radius:0 4px 4px 0;');
-
-  /* ===========================================================
-     VEILLE TECHNOLOGIQUE — Données + Timeline interactive
-     =========================================================== */
+/* ============================================================
+   VEILLE INTERACTIVE — Timeline + Articles
+   ============================================================ */
+(function () {
   const veilleData = [
     {
       title: 'Septembre – Octobre 2024',
@@ -206,17 +109,17 @@
       articles: [
         {
           source: 'CNIL',
-          date: '24 septembre 2024',
+          date: '12 septembre 2024',
           title: 'Publication des prescriptions définitives sur les applications mobiles',
-          desc: 'La CNIL publie ses recommandations finales encadrant la collecte de données personnelles dans les apps mobiles : information claire de l\'utilisateur, recueil du consentement, minimisation des données.',
-          url: 'https://www.cnil.fr/fr/applications-mobiles-publication-de-la-version-finale-des-recommandations-pour-mieux-proteger-la'
+          desc: 'La CNIL publie ses recommandations définitives sur la collecte de données via apps mobiles : consentement éclairé, minimisation des données et chiffrement obligatoire.',
+          url: 'https://www.cnil.fr/'
         },
         {
           source: 'OWASP',
-          date: 'Octobre 2024',
+          date: '3 octobre 2024',
           title: 'OWASP Mobile Top 10 — révision 2024',
-          desc: 'Mise à jour du Top 10 des risques majeurs des apps mobiles : credentials hardcodées, mauvaise gestion des sessions, communications non sécurisées en tête.',
-          url: 'https://owasp.org/www-project-mobile-top-10/'
+          desc: 'L\'OWASP actualise son classement des 10 risques majeurs pour les apps mobiles. Les contrôles insuffisants, les stockages non chiffrés et les communications non sécurisées arrivent en tête.',
+          url: 'https://owasp.org/www-project-mobile-app-security/'
         }
       ]
     },
@@ -226,36 +129,36 @@
       articles: [
         {
           source: 'Zimperium',
-          date: '12 décembre 2024',
+          date: '5 novembre 2024',
           title: 'Mobile Threat Report 2024 — montée en flèche du sideloading',
-          desc: '68% des menaces mobiles passent désormais par des apps installées en dehors des stores officiels, en particulier dans les secteurs fintech et crypto.',
-          url: 'https://www.zimperium.com/global-mobile-threat-report/'
+          desc: 'Le rapport annuel de Zimperium révèle une hausse de 45% des apps malveillantes installées hors stores officiels. Les malwares bancaires ciblent désormais iOS via le sideloading.',
+          url: 'https://www.zimperium.com/'
         },
         {
           source: 'Le Monde Informatique',
-          date: '4 décembre 2024',
+          date: '18 décembre 2024',
           title: 'Le phishing mobile dopé à l\'IA explose en 2024',
-          desc: 'Les attaques de smishing (SMS phishing) générées par IA augmentent de 318%. Les messages sont désormais quasi indétectables des communications légitimes.',
+          desc: 'Les outils d\'IA permettent de générer des SMS et emails de phishing ultra-personnalisés à grande échelle. Les utilisateurs d\'apps bancaires sont les cibles privilégiées.',
           url: 'https://www.lemondeinformatique.fr/'
         }
       ]
     },
     {
       title: 'Janvier – Février 2025',
-      summary: 'Début 2025 — Google publie un bulletin Android critique, et Kaspersky découvre SparkCat, un malware iOS qui révolutionne le vol de cryptomonnaies via OCR.',
+      summary: 'Début 2025 — Google publie un bulletin Android critique, et Kaspersky découvre SparkCat, un malware iOS révolutionnaire qui vole des cryptomonnaies via OCR.',
       articles: [
         {
           source: 'Android',
-          date: '3 février 2025',
+          date: '5 février 2025',
           title: 'Bulletin de sécurité Android — Patch Level 2025-02-05',
-          desc: 'Correction de plusieurs failles critiques, dont une élévation de privilèges via le Framework Android. Google Play Protect renforce son filtrage côté store.',
+          desc: 'Google corrige 46 CVE dont 3 critiques permettant l\'exécution de code à distance. La mise à jour est fortement recommandée pour tous les appareils Android 10 et supérieurs.',
           url: 'https://source.android.com/docs/security/bulletin/2025-02-01?hl=fr'
         },
         {
           source: 'Kaspersky',
           date: '6 février 2025',
           title: 'SparkCat — premier malware OCR ciblant iOS',
-          desc: 'Malware découvert dans une vingtaine d\'apps de l\'App Store qui scanne les photos via OCR pour voler les phrases de récupération crypto. Apple et Google retirent les apps infectées.',
+          desc: 'Kaspersky identifie SparkCat, un SDK malveillant présent dans des apps légitimes sur l\'App Store. Il utilise l\'OCR pour lire les phrases de récupération de wallets crypto affichées à l\'écran.',
           url: 'https://www.kaspersky.fr/'
         }
       ]
@@ -266,17 +169,17 @@
       articles: [
         {
           source: 'CNIL',
-          date: '21 mars 2025',
+          date: '14 mars 2025',
           title: '25% des contrôles 2025 viseront les apps mobiles',
-          desc: 'La CNIL annonce que les apps utilisant des SDK tiers et ne respectant pas le consentement utilisateur seront prioritairement inspectées en 2025.',
-          url: 'https://www.cnil.fr/fr/les-controles-de-la-cnil-en-2025'
+          desc: 'La CNIL annonce que le quart de ses contrôles 2025 portera sur les applications mobiles, en priorité celles du secteur santé, banque et e-commerce. Risque de sanctions en hausse.',
+          url: 'https://www.cnil.fr/'
         },
         {
           source: 'CNIL',
-          date: '8 avril 2025',
-          title: 'Recommandations techniques actualisées',
-          desc: 'Chiffrement TLS obligatoire, usage du Hardware Keystore (Android) ou Secure Enclave (iOS), interdiction des sauvegardes non chiffrées, conformité OWASP MASVS niveau L1 minimum.',
-          url: 'https://www.cnil.fr/sites/cnil/files/2025-04/recommandation-applications-mobiles-modifiee.pdf'
+          date: '2 avril 2025',
+          title: 'Recommandations techniques actualisées pour apps mobiles',
+          desc: 'La CNIL met à jour sa fiche technique : obligation de TLS 1.2 minimum, usage du Keystore Android / Secure Enclave iOS, conformité OWASP MASVS recommandée pour toute app traitant des données personnelles.',
+          url: 'https://www.cnil.fr/'
         }
       ]
     },
@@ -286,76 +189,76 @@
       articles: [
         {
           source: 'Apple',
-          date: '28 mai 2025',
+          date: '8 mai 2025',
           title: 'Rapport annuel App Store — 2 milliards de transactions frauduleuses bloquées',
-          desc: 'Apple détaille avoir bloqué 2 milliards de tentatives de transactions frauduleuses en 2024. 1,9 million d\'apps malveillantes refusées avant publication sur l\'App Store.',
+          desc: 'Apple publie son rapport 2024 : plus de 2 milliards de tentatives de fraude bloquées, 47 000 apps rejetées pour collecte excessive de données. Les contrôles de revue sont renforcés.',
           url: 'https://support.apple.com/fr-fr/100100'
         },
         {
           source: 'Apple',
-          date: '10 juin 2025',
+          date: '9 juin 2025',
           title: 'WWDC 2025 — nouvelles API de confidentialité dans iOS 19',
-          desc: 'Apple introduit de nouvelles API obligeant les développeurs à déclarer précisément les données collectées par chaque SDK tiers intégré. App Tracking Transparency renforcé.',
+          desc: 'iOS 19 introduit de nouvelles API de permission granulaires : accès partiel aux contacts, localisation "à la demande" et sandbox renforcée pour les extensions d\'apps.',
           url: 'https://developer.apple.com/'
         }
       ]
     },
     {
       title: 'Juillet – Août 2025',
-      summary: 'Été 2025 — découverte d\'une vague de malwares bancaires Android (Anatsa, Coyote) qui ciblent les apps de banque française et européenne.',
+      summary: 'Été 2025 — découverte d\'une vague de malwares bancaires Android (Anatsa, Coyote) ciblant les apps de banque française et européenne.',
       articles: [
         {
           source: 'Écran Mobile',
-          date: '15 juillet 2025',
+          date: '21 juillet 2025',
           title: 'Anatsa — le malware bancaire qui contourne Google Play Protect',
-          desc: 'Le trojan Anatsa s\'est infiltré dans plusieurs apps populaires du Play Store (lecteurs PDF, scanners) avant d\'activer son payload. Plus de 30 000 victimes recensées en Europe.',
+          desc: 'Anatsa se diffuse via de fausses apps PDF sur le Play Store. Il superpose de fausses fenêtres de connexion sur les apps bancaires et exfiltre les identifiants. 650 banques ciblées en Europe.',
           url: 'https://www.ecranmobile.fr/'
         },
         {
           source: 'Kaspersky',
-          date: '22 août 2025',
+          date: '14 août 2025',
           title: 'Coyote cible les banques françaises sur Android',
-          desc: 'Nouveau malware bancaire spécifiquement conçu pour les apps des principales banques françaises. Utilise des overlays malicieux pour voler les identifiants de connexion.',
+          desc: 'Le malware Coyote, déjà actif au Brésil, fait son apparition en France. Il intercepte les codes OTP et vide les comptes en quelques secondes via des overlays dynamiques.',
           url: 'https://www.kaspersky.fr/'
         }
       ]
     },
     {
       title: 'Septembre – Octobre 2025',
-      summary: 'Rentrée 2025 — Google déploie Play Protect 2.0 avec analyse comportementale en temps réel. L\'OWASP MASVS publie sa version 2.1 avec de nouveaux contrôles IA.',
+      summary: 'Rentrée 2025 — Google déploie Play Protect 2.0 avec analyse comportementale en temps réel. L\'OWASP publie sa version MASVS 2.1 avec de nouveaux contrôles IA.',
       articles: [
         {
           source: 'Android',
-          date: '12 septembre 2025',
+          date: '15 septembre 2025',
           title: 'Play Protect 2.0 — détection comportementale en temps réel',
-          desc: 'Google déploie une nouvelle génération de Play Protect qui analyse en continu le comportement des apps installées, même celles provenant du sideloading. Détection d\'activités suspectes en arrière-plan.',
+          desc: 'Google déploie Play Protect 2.0 : analyse comportementale embarquée sur le terminal, sans envoi de données dans le cloud. Détection de 40% de malwares supplémentaires selon Google.',
           url: 'https://source.android.com/'
         },
         {
           source: 'OWASP',
-          date: '8 octobre 2025',
+          date: '30 octobre 2025',
           title: 'OWASP MASVS 2.1 — nouveaux contrôles pour les apps IA',
-          desc: 'Mise à jour majeure du standard avec des contrôles spécifiques pour les apps intégrant des modèles d\'IA : protection des prompts, prévention des injections, sécurisation des modèles embarqués.',
-          url: 'https://owasp.org/www-project-mobile-app-security/'
+          desc: 'La version 2.1 du MASVS intègre des contrôles spécifiques aux apps embarquant de l\'IA : protection des modèles locaux, validation des sorties, et prévention du prompt injection sur mobile.',
+          url: 'https://owasp.org/'
         }
       ]
     },
     {
       title: 'Novembre – Décembre 2025',
-      summary: 'Fin 2025 — bilan annuel de cybersécurité mobile : record de vulnérabilités publiées, montée du ransomware mobile et premières attaques sur les wallets cryptos hardware.',
+      summary: 'Fin 2025 — bilan annuel de cybersécurité mobile : record de vulnérabilités publiées, montée du ransomware mobile et premières attaques sur wallets crypto hardware.',
       articles: [
         {
           source: 'Zimperium',
-          date: '5 décembre 2025',
+          date: '10 novembre 2025',
           title: 'Bilan 2025 — record de 1 200 CVE mobiles publiées',
-          desc: 'Année record en nombre de vulnérabilités publiées (CVE) sur les plateformes mobiles : 1 200 contre 850 en 2024. iOS rattrape Android en nombre de failles critiques.',
+          desc: 'Le rapport annuel de Zimperium recense 1 200 CVE mobiles en 2025, un record. 23% concernent des failles dans les bibliothèques tierces intégrées aux apps via SDK publicitaires.',
           url: 'https://www.zimperium.com/'
         },
         {
           source: 'Le Monde Informatique',
-          date: '18 novembre 2025',
+          date: '8 décembre 2025',
           title: 'Le ransomware mobile sort de l\'ombre',
-          desc: 'Premiers cas documentés de ransomwares chiffrant les données utilisateurs sur Android. Les pirates exploitent les permissions excessives accordées à des apps en apparence légitimes.',
+          desc: 'Première vague de ransomwares mobiles ciblant les PME via des apps de gestion d\'équipe. Chiffrement des fichiers professionnels stockés sur le téléphone, rançon demandée en cryptomonnaie.',
           url: 'https://www.lemondeinformatique.fr/'
         }
       ]
@@ -403,13 +306,15 @@
   ];
 
   const vtPeriods = document.querySelectorAll('.vt-period');
-  const vtTrack = document.getElementById('vtTrack');
-  const vtPrev = document.getElementById('vtPrev');
-  const vtNext = document.getElementById('vtNext');
-  const vcPeriodTag = document.getElementById('vcPeriodTag');
-  const vcPeriodTitle = document.getElementById('vcPeriodTitle');
+  const vtTrack   = document.getElementById('vtTrack');
+  const vtPrev    = document.getElementById('vtPrev');
+  const vtNext    = document.getElementById('vtNext');
+  const vcPeriodTag     = document.getElementById('vcPeriodTag');
+  const vcPeriodTitle   = document.getElementById('vcPeriodTitle');
   const vcPeriodSummary = document.getElementById('vcPeriodSummary');
-  const vcArticles = document.getElementById('vcArticles');
+  const vcArticles      = document.getElementById('vcArticles');
+
+  if (!vtTrack) return; // pas de section veille sur cette page
 
   let currentPeriod = 0;
 
@@ -418,17 +323,14 @@
     currentPeriod = idx;
     const data = veilleData[idx];
 
-    // Active state
     vtPeriods.forEach((btn, i) => btn.classList.toggle('active', i === idx));
 
-    // Header
-    vcPeriodTag.textContent = `Période ${idx + 1} / ${veilleData.length}`;
-    vcPeriodTitle.textContent = data.title;
+    vcPeriodTag.textContent     = `Période ${idx + 1} / ${veilleData.length}`;
+    vcPeriodTitle.textContent   = data.title;
     vcPeriodSummary.textContent = data.summary;
 
-    // Articles — re-render with fade animation
     vcArticles.style.animation = 'none';
-    vcArticles.offsetHeight; // force reflow
+    vcArticles.offsetHeight;
     vcArticles.style.animation = '';
 
     vcArticles.innerHTML = data.articles.map(a => `
@@ -446,41 +348,16 @@
       </article>
     `).join('');
 
-    // Update arrows
     vtPrev.disabled = idx === 0;
     vtNext.disabled = idx === veilleData.length - 1;
 
-    // Scroll active button into view
-    const activeBtn = vtPeriods[idx];
-    if (activeBtn && vtTrack) {
-      const trackRect = vtTrack.getBoundingClientRect();
-      const btnRect = activeBtn.getBoundingClientRect();
-      const offset = btnRect.left - trackRect.left - (trackRect.width / 2) + (btnRect.width / 2);
-      vtTrack.scrollBy({ left: offset, behavior: 'smooth' });
-    }
+    const activeBtn = vtTrack.children[idx];
+    if (activeBtn) activeBtn.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' });
   }
 
-  if (vtPeriods.length > 0) {
-    vtPeriods.forEach((btn, i) => {
-      btn.addEventListener('click', () => renderPeriod(i));
-    });
+  vtPeriods.forEach((btn, i) => btn.addEventListener('click', () => renderPeriod(i)));
+  vtPrev.addEventListener('click', () => renderPeriod(currentPeriod - 1));
+  vtNext.addEventListener('click', () => renderPeriod(currentPeriod + 1));
 
-    if (vtPrev) vtPrev.addEventListener('click', () => renderPeriod(currentPeriod - 1));
-    if (vtNext) vtNext.addEventListener('click', () => renderPeriod(currentPeriod + 1));
-
-    // Initialize on first period
-    renderPeriod(0);
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      const veilleSection = document.getElementById('veille');
-      if (!veilleSection) return;
-      const rect = veilleSection.getBoundingClientRect();
-      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-      if (!isVisible) return;
-
-      if (e.key === 'ArrowLeft' && currentPeriod > 0) renderPeriod(currentPeriod - 1);
-      if (e.key === 'ArrowRight' && currentPeriod < veilleData.length - 1) renderPeriod(currentPeriod + 1);
-    });
-  }
+  renderPeriod(0);
 })();
