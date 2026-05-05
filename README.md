@@ -6,15 +6,6 @@ Ce portfolio a été conçu pour être présenté lors de l'épreuve **E6** (par
 
 ---
 
-## 🎨 Identité visuelle
-
-- **Style** : Dark mode haut de gamme · inspiré de Linear et Stripe
-- **Effets** : Glassmorphism, gradients ambiants, animations fluides
-- **Couleurs** : Noir profond (`#050507`) · Bleu électrique (`#007BFF`) en accent
-- **Typographie** : Geist (sans/mono) + Instrument Serif (italique)
-
----
-
 ## 📁 Structure du projet
 
 ```
